@@ -1,12 +1,12 @@
 import java.util.Scanner;
 
-public class ex11 {
+public class ex12 {
     public static void main(String[] args) {
         BankAccount account1 = new BankAccount("casper",500,10);
 
 
-        account1.withdraw(200);         //Withdraw #11
-
+        //account1.withdraw(200);         //Withdraw #11
+        System.out.println(account1);          //ToString #12
     }
 
     public static class BankAccount{
@@ -44,6 +44,14 @@ public class ex11 {
             this.balance = balance;
             this.transactionFee = transactionFee;
         }
+        @Override
+        public String toString(){
+            //Edits the name so that the first letter in the string gets UpperCased, and the rest of the sting gets LowerCased
+            name = name.substring(0,1).toUpperCase()+ name.substring(1).toLowerCase();
+            //Returns the convertet name and adds a doller sign '$' in front of ballance
+            return name + ", " + "$"+balance;
+        }
+
     }
 
 }
